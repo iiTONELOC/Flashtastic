@@ -1,0 +1,17 @@
+/* header styles */
+#header {
+    display:flex;
+    width:90%;
+    align-items: center;
+    justify-content: space-between;
+    margin: auto;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    font-weight: 100;
+}
+#view-scores{
+    color:violet;
+    text-shadow: purple 1px 1px;
+
+
+}
