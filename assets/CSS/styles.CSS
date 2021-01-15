@@ -1,10 +1,14 @@
+html * { 
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
 /* header styles */
 #header {
     display:flex;
     align-items: flex-start;
     justify-content: space-between;
     margin-bottom: 20px;
-    font-family: Arial, Helvetica, sans-serif;
     font-size: 14px;
     height: 200px;
 }
@@ -17,7 +21,7 @@
 
 #view-scores{
     color:violet;
-    text-shadow: purple 1px 1px;
+    text-shadow: rgb(0,0,0, .5) 1px 1px;
 }
 
 /* landing page/quiz start styles */
@@ -37,9 +41,28 @@
     font-size: x-large;
     margin-top: 20px;
 }
+#question h2{
+    font-size: larger;
+}
 
 #start-quiz{
     margin-top: 25px;
+}
+
+#start-quiz , li {font-size: 18px;
+    color: whitesmoke;
+    text-align: left;
+    background-color: blueviolet;
+    margin:15px;
+    list-style: none;
+    border: blueviolet;
+    border-radius: 5px;
+    padding:10px;
+
+}
+
+li:hover {
+    background-color: violet;
 }
 
 
