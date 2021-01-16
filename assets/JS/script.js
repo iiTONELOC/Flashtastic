@@ -32,12 +32,32 @@ var quizAnswerContainer = document.querySelector("#quiz-answers")
 // if timer reaches zero end game 
 // if all questions answered end game
 // at end game display score which is time remaining. allow users to save high score
-//function removeButton(){
-    //document.querySelector("#start-quiz").removeEventListener("click");
-
-//}
-
+function countdown() {
+    var timeLeft = 90;
+    
+    // Use the `setInterval()` method to call a function to be executed every 1000 milliseconds
+    var timeInterval = setInterval(function() {
+    
+      // As long as the `timeLeft` is greater than 1
+        if (timeLeft > 1) {
+        // Set the `textContent` of `timerEl` to show the remaining seconds
+        document.querySelector('#timer').textContent = timeLeft;
+        // Decrement `timeLeft` by 1
+        timeLeft--;
+        } else if (timeLeft === 1) {
+        // When `timeLeft` is equal to 1, rename to 'second' instead of 'seconds'
+        document.querySelector('#timer').textContent = timeLeft;
+        timeLeft--;
+        } else {
+        // Once `timeLeft` gets to 0, set `timerEl` to an empty string
+        document.querySelector('#timer').textContent = '';
+        // Use `clearInterval()` to stop the timer
+        clearInterval(timeInterval);
+        }
+    }, 1000);
+    }
 function startQuiz(){
+    countdown();
 
 document.getElementById('h1').remove();
 for(var i=0; i<questions.length; i++){
@@ -106,5 +126,5 @@ for(var i=0; i<questions.length; i++){
 // event listeners
 
 
-document.querySelector("#start-quiz").addEventListener("click", startQuiz) //removeButton);
+document.querySelector("#start-quiz").addEventListener("click", startQuiz,countdown) //removeButton);
 
