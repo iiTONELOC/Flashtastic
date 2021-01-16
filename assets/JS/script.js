@@ -1,14 +1,32 @@
 //create array of game questions and answers
 var questions =[
     {
-    q: "Which Company developed JavaScript?",
-    c: ["1. Bell Labs", "2. Netscape", "3. Sun Microsystems", "4. IBM"],
-    a: "2.Netscape"  
+    question: 'Which Company developed JavaScript?',
+    
+    
+    a: '2.Netscape' 
     }
+    
+        
+    
+];
+
+var options= [ 
+    '1. Bell Labs',
+    '2. Netscape',
+    '3. Sun Microsystems',
+    '4. IBM',
 ]
+console.log(options)
+
+
+
 // create reference 
 var startQuizButton = document.querySelector("#start-quiz")
 var divQuestion = document.querySelector("#question")
+var quizAnswerContainer = document.querySelector("#quiz-answers")
+
+
 
 // quiz variables
 // score= time remaining 
@@ -22,9 +40,34 @@ var divQuestion = document.querySelector("#question")
 // if all questions answered end game
 // at end game display score which is time remaining. allow users to save high score
 function startQuiz(){
-divQuestion.innerHTML = "";
- 
+
+for(var i=0; i<questions.length; i++){
+    document.querySelector("#quiz-answers").removeChild(document.querySelector("#quiz-answers").lastElementChild);
+    divQuestion.textContent = questions[i].question;
+    //create ul
+    var ul=document.createElement('ul');
+    ul.setAttribute('class', 'list');
+    //loop to generate answers from array
+   
+    for(var i=0; i<options.length; i++){
+        var li = document.createElement('li');
+        li.textContent=options[i];
+        li.setAttribute('class','list-item');
+        ul.appendChild(li);
+    }
+    //add ul to page
+    quizAnswerContainer.appendChild(ul);
+
+
+    
+        
+
+
 }
+
+}
+
+
 
 
 
