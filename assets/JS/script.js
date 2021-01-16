@@ -3,12 +3,13 @@ var taskIdCounter=0
 var questions =[
     {question: 'Which Company developed JavaScript?',
     choices: ["1. Bell Labs", "2. Netscape", "3. Sun Microsystems",  "4. IBM",],
-    a: 2
+    a: 1
     }
     
         
     
 ];
+
 
 
 
@@ -31,10 +32,18 @@ var quizAnswerContainer = document.querySelector("#quiz-answers")
 // if timer reaches zero end game 
 // if all questions answered end game
 // at end game display score which is time remaining. allow users to save high score
+//function removeButton(){
+    //document.querySelector("#start-quiz").removeEventListener("click");
+
+//}
+
 function startQuiz(){
 
 document.getElementById('h1').remove();
 for(var i=0; i<questions.length; i++){
+    //correct answers value
+    var correctAnswer=(questions[i].a)
+    console.log(correctAnswer);
     // removes submit button
     document.querySelector("#quiz-answers").removeChild(document.querySelector("#quiz-answers").lastElementChild);
 
@@ -46,19 +55,17 @@ for(var i=0; i<questions.length; i++){
     //create ul
     var ul=document.createElement('ul');
     ul.setAttribute('class', 'list');
-    ul.setAttribute
+    ul.setAttribute('id', 'list-item')
     //loop to generate answers from array
     var choice= questions[i].choices;
-console.log(choice.length)
+    console.log(choice)
     
     for (var j=0; j<choice.length; j++){
         var li = document.createElement('li');
         li.textContent=choice[j];
-        console.log("🚀 ~ file: script.js ~ line 57 ~ startQuiz ~ choice[j]", choice[j])
-    
         li.setAttribute('class','list-item');
         li.setAttribute('id','list-item')
-        li.setAttribute('data-task-id', taskIdCounter)
+        li.setAttribute('value', taskIdCounter)
         taskIdCounter++;
         ul.appendChild(li);
         
@@ -66,18 +73,27 @@ console.log(choice.length)
     //add ul to page
     quizAnswerContainer.appendChild(ul);
     
-    var data = li.value
-    console.log(data);
-    //check answer
-    var checkAnswer = function(event) {
-        console.log(event.target.value);
-        //if(event.target.matches)
     
+    //check answer
+    var checkAnswer= function(event){
+        if(event.target.value === correctAnswer){
+            console.log("Correct");
+        }
+        else if(event.target.value === 'null'){
+            
+        }
+        else{
+            console.log("Incorrect, try again!")
+        }
+        
+    }
+    
+    document.getElementById('list-item').addEventListener("click", checkAnswer);
     
     
 
-        }
-        document.querySelector("#quiz-answers").addEventListener("click", checkAnswer);
+        
+       
 }
 }
 
@@ -90,5 +106,5 @@ console.log(choice.length)
 // event listeners
 
 
-document.querySelector("#start-quiz").addEventListener("click", startQuiz);
+document.querySelector("#start-quiz").addEventListener("click", startQuiz) //removeButton);
 
