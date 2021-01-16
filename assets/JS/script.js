@@ -1,23 +1,15 @@
 //create array of game questions and answers
+var taskIdCounter=0
 var questions =[
-    {
-    question: 'Which Company developed JavaScript?',
-    
-    
-    a: '2.Netscape' 
+    {question: 'Which Company developed JavaScript?',
+    choices: ["1. Bell Labs", "2. Netscape", "3. Sun Microsystems",  "4. IBM",],
+    a: 2
     }
     
         
     
 ];
 
-var options= [ 
-    '1. Bell Labs',
-    '2. Netscape',
-    '3. Sun Microsystems',
-    '4. IBM',
-]
-console.log(options)
 
 
 
@@ -40,10 +32,13 @@ var quizAnswerContainer = document.querySelector("#quiz-answers")
 // if all questions answered end game
 // at end game display score which is time remaining. allow users to save high score
 function startQuiz(){
+
 document.getElementById('h1').remove();
 for(var i=0; i<questions.length; i++){
+    // removes submit button
     document.querySelector("#quiz-answers").removeChild(document.querySelector("#quiz-answers").lastElementChild);
 
+    //creates the h2 element for the question to display 
     var h2=document.createElement('h2');
     h2.setAttribute('class','h1');
     h2.textContent=questions[i].question;
@@ -51,25 +46,41 @@ for(var i=0; i<questions.length; i++){
     //create ul
     var ul=document.createElement('ul');
     ul.setAttribute('class', 'list');
+    ul.setAttribute
     //loop to generate answers from array
-   
-    for(var i=0; i<options.length; i++){
+    var choice= questions[i].choices;
+console.log(choice.length)
+    
+    for (var j=0; j<choice.length; j++){
         var li = document.createElement('li');
-        li.textContent=options[i];
+        li.textContent=choice[j];
+        console.log("🚀 ~ file: script.js ~ line 57 ~ startQuiz ~ choice[j]", choice[j])
+    
         li.setAttribute('class','list-item');
+        li.setAttribute('id','list-item')
+        li.setAttribute('data-task-id', taskIdCounter)
+        taskIdCounter++;
         ul.appendChild(li);
+        
     }
     //add ul to page
     quizAnswerContainer.appendChild(ul);
-
-
     
-        
+    var data = li.value
+    console.log(data);
+    //check answer
+    var checkAnswer = function(event) {
+        console.log(event.target.value);
+        //if(event.target.matches)
+    
+    
+    
 
-
+        }
+        document.querySelector("#quiz-answers").addEventListener("click", checkAnswer);
+}
 }
 
-}
 
 
 
@@ -77,5 +88,7 @@ for(var i=0; i<questions.length; i++){
 
 
 // event listeners
+
+
 document.querySelector("#start-quiz").addEventListener("click", startQuiz);
 
