@@ -32,8 +32,10 @@ var quizAnswerContainer = document.querySelector("#quiz-answers")
 // if timer reaches zero end game 
 // if all questions answered end game
 // at end game display score which is time remaining. allow users to save high score
+
+var timeLeft = 90;
 function countdown() {
-    var timeLeft = 90;
+    
     
     // Use the `setInterval()` method to call a function to be executed every 1000 milliseconds
     var timeInterval = setInterval(function() {
@@ -104,6 +106,7 @@ for(var i=0; i<questions.length; i++){
         }
         else{
             console.log("Incorrect, try again!")
+            document.querySelector('#timer').textContent=(timeLeft-=15);
         }
         
     }
