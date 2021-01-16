@@ -40,10 +40,14 @@ var quizAnswerContainer = document.querySelector("#quiz-answers")
 // if all questions answered end game
 // at end game display score which is time remaining. allow users to save high score
 function startQuiz(){
-
+document.getElementById('h1').remove();
 for(var i=0; i<questions.length; i++){
     document.querySelector("#quiz-answers").removeChild(document.querySelector("#quiz-answers").lastElementChild);
-    divQuestion.textContent = questions[i].question;
+
+    var h2=document.createElement('h2');
+    h2.setAttribute('class','h1');
+    h2.textContent=questions[i].question;
+    divQuestion.appendChild(h2);
     //create ul
     var ul=document.createElement('ul');
     ul.setAttribute('class', 'list');
