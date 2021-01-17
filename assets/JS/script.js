@@ -79,8 +79,8 @@ var timeInterval = setInterval(function() {
     timer.textContent = '';
     // Use `clearInterval()` to stop the timer
     
-    var clearI=clearInterval(timeInterval);
-    clearI();
+    clearInterval(timeInterval);
+    
     endGame();
         }
     }, 1000);
@@ -139,7 +139,7 @@ for(var i=0; i<question1.length; i++){
             console.log("Correct");
             var status=document.querySelector('#incorrect')
             var correct =document.createElement('h2');
-            correct.textContent="Incorrect! Please try again.";
+            correct.textContent="Correct!";
             correct.setAttribute('id','incorrect');
             status.appendChild(correct);
             question2();
@@ -155,6 +155,7 @@ for(var i=0; i<question1.length; i++){
             incorrect.textContent="Incorrect! Please try again.";
             incorrect.setAttribute('id','incorrect');
             status.appendChild(incorrect);
+            
             
 
             if (timeLeft>0){
@@ -242,7 +243,7 @@ function question2 (){
             console.log("Correct");
             var status=document.querySelector('#incorrect')
             var correct =document.createElement('h2');
-            correct.textContent="Incorrect! Please try again.";
+            correct.textContent="Correct!";
             correct.setAttribute('id','incorrect');
             status.appendChild(correct);
             question3();
@@ -344,7 +345,7 @@ function question3 (){
             console.log("Correct");
             var status=document.querySelector('#incorrect')
             var correct =document.createElement('h2');
-            correct.textContent="Incorrect! Please try again.";
+            correct.textContent="Correct!";
             correct.setAttribute('id','incorrect');
             status.appendChild(correct);
             question4();
@@ -447,7 +448,7 @@ function question4 (){
             console.log("Correct");
             var status=document.querySelector('#incorrect')
             var correct =document.createElement('h2');
-            correct.textContent="Incorrect! Please try again.";
+            correct.textContent="Correct!";
             correct.setAttribute('id','incorrect');
             status.appendChild(correct);
             question5();
@@ -551,7 +552,7 @@ function question5 (){
             console.log("Correct");
             var status=document.querySelector('#incorrect')
             var correct =document.createElement('h2');
-            correct.textContent="Incorrect! Please try again.";
+            correct.textContent="Correct!";
             correct.setAttribute('id','incorrect');
             status.appendChild(correct);
             endGame();
@@ -599,9 +600,12 @@ function question5 (){
 var endGame= function endGame(){
     var score=timeLeft;
     console.log(score);
-    if(score<0){
-    alert('Your score is 0');
     document.querySelector('#timer').textContent="0"
+
+    if(score<0){
+
+   
+    
     
     }
     else{
