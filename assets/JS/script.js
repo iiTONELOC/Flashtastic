@@ -601,6 +601,7 @@ var endGame= function endGame(){
     console.log(score);
     if(score<0){
     alert('Your score is 0');
+    document.querySelector('#timer').textContent="0"
     
     }
     else{
