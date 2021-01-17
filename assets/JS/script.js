@@ -1,7 +1,6 @@
 //create array of game question1 and answers
 var timeLeft = 90;
 var taskIdCounter=0;
-
 var question1 =[
     {question: 'Which Company developed JavaScript?',
     choices: ["1. Bell Labs", "2. Netscape", "3. Sun Microsystems",  "4. IBM",],
@@ -70,16 +69,17 @@ var timeInterval = setInterval(function() {
     timer.textContent = timeLeft;
     // Decrement `timeLeft` by 1
     timeLeft--;
-    } else if (timeLeft === 1) {
+    } else if (timeLeft === 0) {
     // When `timeLeft` is equal to 1, rename to 'second' instead of 'seconds'
     timer.textContent = timeLeft;
-    timeLeft--;
+    timeLeft;
     } else {
     // Once `timeLeft` gets to 0, set `timer` to an empty string
     timer.textContent = '';
     // Use `clearInterval()` to stop the timer
     
-    clearInterval(timeInterval);
+    var clearI=clearInterval(timeInterval);
+    clearI();
         }
     }, 1000);
     //if(endGame){
@@ -155,7 +155,17 @@ for(var i=0; i<question1.length; i++){
             status.appendChild(incorrect);
             
 
-            document.querySelector('#timer').textContent=(timeLeft-=15);
+            if (timeLeft>0){
+                document.querySelector('#timer').textContent=(timeLeft-=15);
+            }else{
+                timeAtEnd=timeLeft;
+                console.log(timeAtEnd);
+                let score=timeAtEnd;
+                console.log(score);
+                timeLeft.textContent="0";
+                endGame();
+                
+            }
         }
         
     }
@@ -253,7 +263,8 @@ function question2 (){
     document.getElementById('list-item').addEventListener("click", checkAnswer);
     
     
-    } 
+    }
+    else{endGame();} 
 }
 
 function question3 (){
@@ -340,7 +351,8 @@ function question3 (){
     document.getElementById('list-item').addEventListener("click", checkAnswer);
     
     
-    } 
+    }
+    else{endGame();} 
 }
 
 function question4 (){
@@ -428,7 +440,8 @@ function question4 (){
     document.getElementById('list-item').addEventListener("click", checkAnswer);
     
     
-    } 
+    }
+    else{endGame();}
 }
 
 function question5 (){
@@ -516,7 +529,8 @@ function question5 (){
     document.getElementById('list-item').addEventListener("click", checkAnswer);
     
     
-    } 
+    }
+    else{endGame();}
 }
 
 //endGame function
@@ -525,13 +539,14 @@ var endGame= function endGame(){
     console.log(score);
     if(score<0){
     alert('Your score is 0');
-    clearInterval(timeInterval);
-    return;}
+    
+    }
     else{
         alert('Your score is '+  score);
+        console.log(score);
         clearInterval(timeInterval);
-        console.log(score)
-        return;
+        
+        
     }
 
 }
