@@ -58,6 +58,15 @@ var quizWrapper=document.querySelector('#quiz-wrapper')
 // if timer reaches zero end game 
 // if all question1 answered end game
 // at end game display score which is time remaining. allow users to save high score
+//endGame function
+var endGame= function endGame(){
+    var score=timeLeft;
+    console.log(score);
+    timeLeft-=89
+    //reset page
+    divQuestion.removeChild(divQuestion.lastElementChild);
+    quizAnswerContainer.removeChild(quizAnswerContainer.lastElementChild);
+    document.getElementById('incorrect').remove();}
 
 
 function countdown() {
@@ -81,7 +90,7 @@ var timeInterval = setInterval(function() {
     
     clearInterval(timeInterval);
     
-    endGame();
+    
         }
     }, 1000);
     //if(endGame){
@@ -596,28 +605,19 @@ function question5 (){
     else{endGame();}
 }
 
-//endGame function
-var endGame= function endGame(){
-    var score=timeLeft;
-    console.log(score);
-    document.querySelector('#timer').textContent="0"
 
-    if(score<0){
 
-   
     
+       
     
-    }
-    else{
-        alert('Your score is '+  score);
-        console.log(score);
-        timeLeft-=89;
-        document.querySelector('#timer').textContent="0"
-        
-        
-    }
 
-}
+
+    
+
+
+    
+
+
 
 
 
