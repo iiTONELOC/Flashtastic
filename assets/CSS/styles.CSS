@@ -64,5 +64,11 @@ html * {
 li:hover {
     background-color: violet;
 }
+#incorrect{
+    text-align: center;
+    font-size: larger;
+    color:gray;
+    font-style: italic;
+}
 
 
