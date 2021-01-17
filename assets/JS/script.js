@@ -13,6 +13,12 @@ var q2=[
     a: 7    
     }
 ];
+var q3=[
+    {question: ' The _______ method of an Array object adds and/or removes elements from an array.',
+    choices: ['1. Reverse', '2. Shift','3. Slice','4. Splice'],
+    a: 15    
+    }
+];
 // create reference 
 var startQuizButton = document.querySelector("#start-quiz")
 var divQuestion = document.querySelector("#question")
@@ -186,7 +192,7 @@ function question2 (){
         //function to start the quiz
         if(event.target.value === cA){
             console.log("Correct");
-            question2();
+            question3();
 
         }
         else if(event.target.value === 'null'){
@@ -215,6 +221,87 @@ function question2 (){
     
     } 
 }
+
+function question3 (){
+    //check time
+    console.log(timeLeft);
+    //if time left is over 0 continue
+
+    if(timeLeft>0){
+    //reset page
+    divQuestion.removeChild(divQuestion.lastElementChild);
+    quizAnswerContainer.removeChild(quizAnswerContainer.lastElementChild);
+    document.getElementById('incorrect').remove();
+
+    
+    
+
+    
+    
+
+        for(var i=0; i<q2.length; i++){
+            var cA=(q3[i].a)
+            console.log(cA);
+            var h2=document.createElement('h2');
+            h2.setAttribute('class','h1');
+            h2.textContent=q3[0].question;
+            divQuestion.appendChild(h2);
+            //create ul
+            var ul=document.createElement('ul');
+            ul.setAttribute('class', 'list');
+            ul.setAttribute('id', 'list-item')
+            //loop to generate answers from array
+            var choice= q3[i].choices;
+            console.log(choice)
+            
+        }
+        for(var j=0; j<choice.length; j++){
+            var li = document.createElement('li');
+                li.textContent=choice[j];
+                li.setAttribute('class','list-item');
+                li.setAttribute('id','list-item')
+                li.setAttribute('value', taskIdCounter)
+                taskIdCounter++;
+                ul.appendChild(li);
+            }
+            //add ul to page
+            quizAnswerContainer.appendChild(ul);
+            //check answer
+    var checkAnswer= function(event){
+    
+        //function to start the quiz
+        if(event.target.value === cA){
+            console.log("Correct");
+            //question3();
+
+        }
+        else if(event.target.value === 'null'){
+        
+        }
+        else{//recreate the section
+            var section=document.createElement("section")
+            section.setAttribute('id','incorrect')
+            quizWrapper.appendChild(section)
+            let status=document.querySelector('#incorrect')
+            console.log("Incorrect, try again!")
+            var divElStatus=document.createElement('div');
+            status.appendChild(divElStatus);
+            var incorrect =document.createElement('h2');
+            incorrect.textContent="Incorrect! Please try again.";
+            incorrect.setAttribute('id','incorrect');
+            status.appendChild(incorrect);
+
+            document.querySelector('#timer').textContent=(timeLeft-=15);
+        }
+        
+    }
+    
+    document.getElementById('list-item').addEventListener("click", checkAnswer);
+    
+    
+    } 
+}
+
 
 
 
