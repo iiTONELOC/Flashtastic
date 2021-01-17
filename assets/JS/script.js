@@ -253,6 +253,17 @@ function question2 (){
             incorrect.textContent="Incorrect! Please try again.";
             incorrect.setAttribute('id','incorrect');
             status.appendChild(incorrect);
+            if (timeLeft>0){
+                document.querySelector('#timer').textContent=(timeLeft-=15);
+            }else{
+                timeAtEnd=timeLeft;
+                console.log(timeAtEnd);
+                let score=timeAtEnd;
+                console.log(score);
+                timeLeft.textContent="0";
+                endGame();
+                
+            }
             
 
             document.querySelector('#timer').textContent=(timeLeft-=15);
@@ -341,6 +352,17 @@ function question3 (){
             incorrect.textContent="Incorrect! Please try again.";
             incorrect.setAttribute('id','incorrect');
             status.appendChild(incorrect);
+            if (timeLeft>0){
+                document.querySelector('#timer').textContent=(timeLeft-=15);
+            }else{
+                timeAtEnd=timeLeft;
+                console.log(timeAtEnd);
+                let score=timeAtEnd;
+                console.log(score);
+                timeLeft.textContent="0";
+                endGame();
+                
+            }
             
 
             document.querySelector('#timer').textContent=(timeLeft-=15);
@@ -430,6 +452,18 @@ function question4 (){
             incorrect.textContent="Incorrect! Please try again.";
             incorrect.setAttribute('id','incorrect');
             status.appendChild(incorrect);
+
+            if (timeLeft>0){
+                document.querySelector('#timer').textContent=(timeLeft-=15);
+            }else{
+                timeAtEnd=timeLeft;
+                console.log(timeAtEnd);
+                let score=timeAtEnd;
+                console.log(score);
+                timeLeft.textContent="0";
+                endGame();
+                
+            }
             
 
             document.querySelector('#timer').textContent=(timeLeft-=15);
@@ -519,6 +553,17 @@ function question5 (){
             incorrect.textContent="Incorrect! Please try again.";
             incorrect.setAttribute('id','incorrect');
             status.appendChild(incorrect);
+            if (timeLeft>0){
+                document.querySelector('#timer').textContent=(timeLeft-=15);
+            }else{
+                timeAtEnd=timeLeft;
+                console.log(timeAtEnd);
+                let score=timeAtEnd;
+                console.log(score);
+                timeLeft.textContent="0";
+                endGame();
+                
+            }
             
 
             document.querySelector('#timer').textContent=(timeLeft-=15);
