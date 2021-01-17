@@ -607,7 +607,8 @@ var endGame= function endGame(){
     else{
         alert('Your score is '+  score);
         console.log(score);
-        clearInterval(timeInterval);
+        timeLeft-=89;
+        document.querySelector('#timer').textContent="0"
         
         
     }
