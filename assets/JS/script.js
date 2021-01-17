@@ -186,13 +186,25 @@ function question2 (){
         //function to start the quiz
         if(event.target.value === cA){
             console.log("Correct");
-            //question3();
+            question2();
+
         }
         else if(event.target.value === 'null'){
         
         }
-        else{
+        else{//recreate the section
+            var section=document.createElement("section")
+            section.setAttribute('id','incorrect')
+            quizWrapper.appendChild(section)
+            let status=document.querySelector('#incorrect')
             console.log("Incorrect, try again!")
+            var divElStatus=document.createElement('div');
+            status.appendChild(divElStatus);
+            var incorrect =document.createElement('h2');
+            incorrect.textContent="Incorrect! Please try again.";
+            incorrect.setAttribute('id','incorrect');
+            status.appendChild(incorrect);
+
             document.querySelector('#timer').textContent=(timeLeft-=15);
         }
         
