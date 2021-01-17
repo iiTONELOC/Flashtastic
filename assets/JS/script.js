@@ -83,7 +83,7 @@ var endGame= function endGame(){
     for (let i = 0; i< highScores.length; i++ ){  
     
     var li = document.createElement('li');
-        li.textContent=highScores[i];
+        li.textContent='Player Name: '+ highScores[i][0] + '\nScore: ' + highScores[i][1];
         li.setAttribute('class','list-item');
         li.setAttribute('id','list-item')
         ul.appendChild(li);
