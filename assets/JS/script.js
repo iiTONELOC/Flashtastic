@@ -39,29 +39,13 @@ var timer=document.querySelector('#timer')
 var quizWrapper=document.querySelector('#quiz-wrapper')
 
 
-
-
-
-
-
-
-
-
-// quiz variables
-// score= time remaining 
-// 
-
-// Quiz game logic
-// take q. from question1 and insert into div#question
-//take c. from question1 and list each option as a list item 
-// listen for click if option=answer display correct! then next question, if option!= answer then display incorrect and subtract 10 seconds
-// if timer reaches zero end game 
-// if all question1 answered end game
-// at end game display score which is time remaining. allow users to save high score
 //endGame function
 var endGame= function endGame(){
     let score=timeLeft;
     console.log(score);
+    
+    
+
     timeLeft-=89
     //reset page
     divQuestion.removeChild(divQuestion.lastElementChild);
@@ -69,16 +53,43 @@ var endGame= function endGame(){
     document.getElementById('incorrect').remove();
     var user= prompt('Congratulations! Your score is ' + score ,'\nEnter your initials to save your score.')
     console.log('user name is ' + user);
+    let userNameArray=localStorage.getItem('userNameArray')
+    ? JSON.parse(localStorage.getItem('userNameArray'))
+  : []
+    var userName = [
+        
+            uName=user,
+            scores= score,
+        
+    ]
+    console.log(userName)
+    userNameArray.push(userName)
+    console.log(userNameArray)
+
+    localStorage.setItem('userNameArray', JSON.stringify(userNameArray))//save to local storage
     var displayScore=document.createElement('h2');
     displayScore.setAttribute('id','question');
     displayScore.textContent='Congratulations ' + user +' !' +'\nYour score is ' + score;
     divQuestion.appendChild(displayScore);
     
-}
-//var saveScores= function saveScores(){
- //   
-//}
 
+    var ul=document.createElement('ul');
+            ul.setAttribute('class', 'list');
+            ul.setAttribute('id', 'list-item')
+            quizAnswerContainer.appendChild(ul);
+
+    var highScores = JSON.parse(localStorage.getItem('userNameArray'))
+    console.log((highScores))
+    for (let i = 0; i< highScores.length; i++ ){  
+    
+    var li = document.createElement('li');
+        li.textContent=highScores[i];
+        li.setAttribute('class','list-item');
+        li.setAttribute('id','list-item')
+        ul.appendChild(li);
+    
+}
+}
 
 function countdown() {
 // Use the `setInterval()` method to call a function to be executed every 1000 milliseconds
