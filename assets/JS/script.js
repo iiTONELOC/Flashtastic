@@ -215,29 +215,35 @@ function question2 (){
             quizAnswerContainer.appendChild(ul);
             //check answer
     var checkAnswer= function(event){
+        var section=document.createElement('section');
+        section.setAttribute('id','incorrect');
+        quizWrapper.appendChild(section);
+        var status=document.querySelector('#incorrect')
+        var divElStatus=document.createElement('div');
+        status.appendChild(divElStatus);
     
         //function to start the quiz
         if(event.target.value === cA){
             console.log("Correct");
+            var status=document.querySelector('#incorrect')
+            var correct =document.createElement('h2');
+            correct.textContent="Incorrect! Please try again.";
+            correct.setAttribute('id','incorrect');
+            status.appendChild(correct);
             question3();
 
         }
         else if(event.target.value === 'null'){
         
         }
-        else{//recreate the section
-            //var section=document.createElement("section")
-            //section.setAttribute('id','incorrect')
-            //quizWrapper.appendChild(section)
-            //let status=document.querySelector('#incorrect')
-            //console.log("Incorrect, try again!")
-            //var divElStatus=document.createElement('div');
-            //status.appendChild(divElStatus);
-            //var incorrect =document.createElement('h2');
-            //incorrect.textContent="Incorrect! Please try again.";
-            //incorrect.setAttribute('id','incorrect');
-            //status.appendChild(incorrect);
-            alert("Incorrect! Please try again.")
+        else{
+            
+            console.log("Incorrect, try again!")            
+            var incorrect =document.createElement('h2');
+            incorrect.textContent="Incorrect! Please try again.";
+            incorrect.setAttribute('id','incorrect');
+            status.appendChild(incorrect);
+            
 
             document.querySelector('#timer').textContent=(timeLeft-=15);
         }
@@ -259,7 +265,7 @@ function question3 (){
     //reset page
     divQuestion.removeChild(divQuestion.lastElementChild);
     quizAnswerContainer.removeChild(quizAnswerContainer.lastElementChild);
-    
+    document.getElementById('incorrect').remove();
 
     
     
@@ -296,29 +302,35 @@ function question3 (){
             quizAnswerContainer.appendChild(ul);
             //check answer
     var checkAnswer= function(event){
+        var section=document.createElement('section');
+        section.setAttribute('id','incorrect');
+        quizWrapper.appendChild(section);
+        var status=document.querySelector('#incorrect')
+        var divElStatus=document.createElement('div');
+        status.appendChild(divElStatus);
     
         //function to start the quiz
         if(event.target.value === tA){
             console.log("Correct");
+            var status=document.querySelector('#incorrect')
+            var correct =document.createElement('h2');
+            correct.textContent="Incorrect! Please try again.";
+            correct.setAttribute('id','incorrect');
+            status.appendChild(correct);
             question4();
 
         }
         else if(event.target.value === 'null'){
         
         }
-        else{//recreate the section
-            //var section=document.createElement("section")
-            //section.setAttribute('id','incorrect')
-            //quizWrapper.appendChild(section)
-            //let status=document.querySelector('#incorrect')
-            //console.log("Incorrect, try again!")
-            //var divElStatus=document.createElement('div');
-            //status.appendChild(divElStatus);
-            //var incorrect =document.createElement('h2');
-            //incorrect.textContent="Incorrect! Please try again.";
-            //incorrect.setAttribute('id','incorrect');
-            //status.appendChild(incorrect);
-            alert("Incorrect! Please try again.")
+        else{
+            
+            console.log("Incorrect, try again!")            
+            var incorrect =document.createElement('h2');
+            incorrect.textContent="Incorrect! Please try again.";
+            incorrect.setAttribute('id','incorrect');
+            status.appendChild(incorrect);
+            
 
             document.querySelector('#timer').textContent=(timeLeft-=15);
         }
@@ -340,7 +352,8 @@ function question4 (){
     //reset page
     divQuestion.removeChild(divQuestion.lastElementChild);
     quizAnswerContainer.removeChild(quizAnswerContainer.lastElementChild);
-    
+    document.getElementById('incorrect').remove();
+
 
     
     
@@ -377,29 +390,35 @@ function question4 (){
             quizAnswerContainer.appendChild(ul);
             //check answer
     var checkAnswer= function(event){
+        var section=document.createElement('section');
+        section.setAttribute('id','incorrect');
+        quizWrapper.appendChild(section);
+        var status=document.querySelector('#incorrect')
+        var divElStatus=document.createElement('div');
+        status.appendChild(divElStatus);
     
         //function to start the quiz
         if(event.target.value === cA){
             console.log("Correct");
+            var status=document.querySelector('#incorrect')
+            var correct =document.createElement('h2');
+            correct.textContent="Incorrect! Please try again.";
+            correct.setAttribute('id','incorrect');
+            status.appendChild(correct);
             question5();
 
         }
         else if(event.target.value === 'null'){
         
         }
-        else{//recreate the section
-            //var section=document.createElement("section")
-            //section.setAttribute('id','incorrect')
-            //quizWrapper.appendChild(section)
-            //let status=document.querySelector('#incorrect')
-            //console.log("Incorrect, try again!")
-            //var divElStatus=document.createElement('div');
-           // status.appendChild(divElStatus);
-            //var incorrect =document.createElement('h2');
-            //incorrect.textContent="Incorrect! Please try again.";
-            //incorrect.setAttribute('id','incorrect');
-            //status.appendChild(incorrect);
-            alert("Incorrect! Please try again.")
+        else{
+            
+            console.log("Incorrect, try again!")            
+            var incorrect =document.createElement('h2');
+            incorrect.textContent="Incorrect! Please try again.";
+            incorrect.setAttribute('id','incorrect');
+            status.appendChild(incorrect);
+            
 
             document.querySelector('#timer').textContent=(timeLeft-=15);
         }
@@ -421,7 +440,8 @@ function question5 (){
     //reset page
     divQuestion.removeChild(divQuestion.lastElementChild);
     quizAnswerContainer.removeChild(quizAnswerContainer.lastElementChild);
-    
+    document.getElementById('incorrect').remove();
+
 
     
     
@@ -458,29 +478,35 @@ function question5 (){
             quizAnswerContainer.appendChild(ul);
             //check answer
     var checkAnswer= function(event){
+        var section=document.createElement('section');
+        section.setAttribute('id','incorrect');
+        quizWrapper.appendChild(section);
+        var status=document.querySelector('#incorrect')
+        var divElStatus=document.createElement('div');
+        status.appendChild(divElStatus);
     
         //function to start the quiz
         if(event.target.value === cA){
             console.log("Correct");
+            var status=document.querySelector('#incorrect')
+            var correct =document.createElement('h2');
+            correct.textContent="Incorrect! Please try again.";
+            correct.setAttribute('id','incorrect');
+            status.appendChild(correct);
             endGame();
 
         }
         else if(event.target.value === 'null'){
         
         }
-        else{//recreate the section
-            //var section=document.createElement("section")
-            //section.setAttribute('id','incorrect')
-            //quizWrapper.appendChild(section)
-            //let status=document.querySelector('#incorrect')
-            //console.log("Incorrect, try again!")
-            //var divElStatus=document.createElement('div');
-           // status.appendChild(divElStatus);
-            //var incorrect =document.createElement('h2');
-            //incorrect.textContent="Incorrect! Please try again.";
-            //incorrect.setAttribute('id','incorrect');
-            //status.appendChild(incorrect);
-            alert("Incorrect! Please try again.")
+        else{
+            
+            console.log("Incorrect, try again!")            
+            var incorrect =document.createElement('h2');
+            incorrect.textContent="Incorrect! Please try again.";
+            incorrect.setAttribute('id','incorrect');
+            status.appendChild(incorrect);
+            
 
             document.querySelector('#timer').textContent=(timeLeft-=15);
         }
