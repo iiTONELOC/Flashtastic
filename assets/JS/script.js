@@ -73,6 +73,7 @@ var timeInterval = setInterval(function() {
     // When `timeLeft` is equal to 1, rename to 'second' instead of 'seconds'
     timer.textContent = timeLeft;
     timeLeft;
+    endGame();
     } else {
     // Once `timeLeft` gets to 0, set `timer` to an empty string
     timer.textContent = '';
@@ -80,6 +81,7 @@ var timeInterval = setInterval(function() {
     
     var clearI=clearInterval(timeInterval);
     clearI();
+    endGame();
         }
     }, 1000);
     //if(endGame){
@@ -157,6 +159,9 @@ for(var i=0; i<question1.length; i++){
 
             if (timeLeft>0){
                 document.querySelector('#timer').textContent=(timeLeft-=15);
+                if(timeLeft<0){
+                    timeLeft=0
+                }
             }else{
                 timeAtEnd=timeLeft;
                 console.log(timeAtEnd);
@@ -255,6 +260,9 @@ function question2 (){
             status.appendChild(incorrect);
             if (timeLeft>0){
                 document.querySelector('#timer').textContent=(timeLeft-=15);
+                if(timeLeft<0){
+                    timeLeft=0
+                }
             }else{
                 timeAtEnd=timeLeft;
                 console.log(timeAtEnd);
@@ -266,7 +274,7 @@ function question2 (){
             }
             
 
-            document.querySelector('#timer').textContent=(timeLeft-=15);
+           
         }
         
     }
@@ -354,6 +362,9 @@ function question3 (){
             status.appendChild(incorrect);
             if (timeLeft>0){
                 document.querySelector('#timer').textContent=(timeLeft-=15);
+                if(timeLeft<0){
+                    timeLeft=0
+                }
             }else{
                 timeAtEnd=timeLeft;
                 console.log(timeAtEnd);
@@ -365,7 +376,7 @@ function question3 (){
             }
             
 
-            document.querySelector('#timer').textContent=(timeLeft-=15);
+            
         }
         
     }
@@ -455,6 +466,9 @@ function question4 (){
 
             if (timeLeft>0){
                 document.querySelector('#timer').textContent=(timeLeft-=15);
+                if(timeLeft<0){
+                    timeLeft=0
+                }
             }else{
                 timeAtEnd=timeLeft;
                 console.log(timeAtEnd);
@@ -466,7 +480,7 @@ function question4 (){
             }
             
 
-            document.querySelector('#timer').textContent=(timeLeft-=15);
+            
         }
         
     }
@@ -555,6 +569,9 @@ function question5 (){
             status.appendChild(incorrect);
             if (timeLeft>0){
                 document.querySelector('#timer').textContent=(timeLeft-=15);
+                if(timeLeft<0){
+                    timeLeft=0
+                }
             }else{
                 timeAtEnd=timeLeft;
                 console.log(timeAtEnd);
@@ -566,7 +583,7 @@ function question5 (){
             }
             
 
-            document.querySelector('#timer').textContent=(timeLeft-=15);
+            
         }
         
     }
