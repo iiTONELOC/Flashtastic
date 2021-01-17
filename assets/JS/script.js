@@ -60,13 +60,24 @@ var quizWrapper=document.querySelector('#quiz-wrapper')
 // at end game display score which is time remaining. allow users to save high score
 //endGame function
 var endGame= function endGame(){
-    var score=timeLeft;
+    let score=timeLeft;
     console.log(score);
     timeLeft-=89
     //reset page
     divQuestion.removeChild(divQuestion.lastElementChild);
     quizAnswerContainer.removeChild(quizAnswerContainer.lastElementChild);
-    document.getElementById('incorrect').remove();}
+    document.getElementById('incorrect').remove();
+    var user= prompt('Congratulations! Your score is ' + score ,'\nEnter your initials to save your score.')
+    console.log('user name is ' + user);
+    var displayScore=document.createElement('h2');
+    displayScore.setAttribute('id','question');
+    displayScore.textContent='Congratulations ' + user +' !' +'\nYour score is ' + score;
+    divQuestion.appendChild(displayScore);
+    
+}
+//var saveScores= function saveScores(){
+ //   
+//}
 
 
 function countdown() {
