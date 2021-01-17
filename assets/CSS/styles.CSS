@@ -71,4 +71,24 @@ li:hover {
     font-style: italic;
 }
 
+section#buttons {
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+button#buttons{
+    font-size: 18px;
+    background-color: blueviolet;
+    color: whitesmoke;
+    margin:15px;
+    border: blueviolet;
+    border-radius: 5px;
+    padding:10px;
+}
+
+button#buttons:hover {
+    background-color: violet;
+}
+
 

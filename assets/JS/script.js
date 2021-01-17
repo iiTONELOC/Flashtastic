@@ -37,6 +37,7 @@ var divQuestion = document.querySelector("#question")
 var quizAnswerContainer = document.querySelector("#quiz-answers")
 var timer=document.querySelector('#timer')
 var quizWrapper=document.querySelector('#quiz-wrapper')
+var btnWrapper=document.querySelector('#buttons')
 
 
 //endGame function
@@ -71,6 +72,10 @@ var endGame= function endGame(){
     displayScore.setAttribute('id','question');
     displayScore.textContent='Congratulations ' + user +' !' +'\nYour score is ' + score;
     divQuestion.appendChild(displayScore);
+    var displayScore=document.createElement('h2');
+    displayScore.setAttribute('id','question');
+    displayScore.textContent='High Scores: ';
+    divQuestion.appendChild(displayScore);
     
 
     var ul=document.createElement('ul');
@@ -89,6 +94,21 @@ var endGame= function endGame(){
         ul.appendChild(li);
     
 }
+//create play again button and clear high score button
+var playAgain=document.createElement('button');
+playAgain.setAttribute('id','buttons')
+playAgain.setAttribute('value',taskIdCounter);
+playAgain.textContent= 'Play Again?';
+taskIdCounter++;
+
+var clearScores=document.createElement('button');
+clearScores.setAttribute('id', 'buttons');
+clearScores.setAttribute('value', taskIdCounter);
+clearScores.textContent= 'Clear High Scores';
+taskIdCounter++;
+
+btnWrapper.appendChild(playAgain);
+btnWrapper.appendChild(clearScores);
 }
 
 function countdown() {
