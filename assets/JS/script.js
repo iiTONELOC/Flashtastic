@@ -38,8 +38,72 @@ var quizAnswerContainer = document.querySelector("#quiz-answers")
 var timer=document.querySelector('#timer')
 var quizWrapper=document.querySelector('#quiz-wrapper')
 var btnWrapper=document.querySelector('#buttons')
+var btnContainer=document.querySelector('#btn-container')
+var scoreWrapper=document.querySelector('#scoreWrapper')
+
+var viewHighScore=function(event){
+    //clear content
+    quizWrapper.remove();
+    btnWrapper.remove();
+    timer.textContent='';
+    var ul=document.createElement('ul');
+    ul.setAttribute('class', 'list');
+    ul.setAttribute('id', 'list-item')
+    scoreWrapper.appendChild(ul);
+
+var highScores = JSON.parse(localStorage.getItem('userNameArray'))
+console.log((highScores))
+
+if(highScores == 'null'){return;
+
+}
+else{
+    for (let i = 0; i< highScores.length; i++ ){  
+
+    var li = document.createElement('li');
+    li.textContent='Player Name: '+ highScores[i][0] + '\nScore: ' + highScores[i][1];
+    li.setAttribute('class','list-item');
+    li.setAttribute('id','list-item')
+    ul.appendChild(li);
+    }
+    
+}
 
 
+var buttonWrap=document.createElement('div');
+buttonWrap.setAttribute('id', 'buttons');
+buttonWrap.setAttribute('class','button')
+scoreWrapper.appendChild(buttonWrap);
+//create play again button and clear high score button
+var playAgain=document.createElement('button');
+playAgain.setAttribute('id','play')
+playAgain.setAttribute('value',taskIdCounter);
+playAgain.textContent= 'Play Again?';
+taskIdCounter++;
+
+var clearScores=document.createElement('button');
+clearScores.setAttribute('id', 'clear');
+clearScores.setAttribute('value', taskIdCounter);
+clearScores.textContent= 'Clear High Scores';
+taskIdCounter++;
+
+buttonWrap.appendChild(playAgain);
+buttonWrap.appendChild(clearScores);
+var btnClick =function(event){
+if(event.target.id === 'play'){
+window.location.reload()  
+}
+else if(event.target.id ==='clear'){
+localStorage.clear(userNameArray);
+quizAnswerContainer.remove();
+}
+}  
+scoreWrapper.addEventListener('click',btnClick)
+
+
+
+}
+document.getElementById("view-scores").addEventListener('click',viewHighScore)
 //endGame function
 var endGame= function endGame(){
     let score=timeLeft;
@@ -56,7 +120,7 @@ var endGame= function endGame(){
     console.log('user name is ' + user);
     let userNameArray=localStorage.getItem('userNameArray')
     ? JSON.parse(localStorage.getItem('userNameArray'))
-  : []
+    : []
     var userName = [
         
             uName=user,
@@ -92,24 +156,40 @@ var endGame= function endGame(){
         li.setAttribute('class','list-item');
         li.setAttribute('id','list-item')
         ul.appendChild(li);
-    
 }
-//create play again button and clear high score button
+
+   
+  //create play again button and clear high score button
 var playAgain=document.createElement('button');
-playAgain.setAttribute('id','buttons')
+playAgain.setAttribute('id','play')
 playAgain.setAttribute('value',taskIdCounter);
 playAgain.textContent= 'Play Again?';
 taskIdCounter++;
 
 var clearScores=document.createElement('button');
-clearScores.setAttribute('id', 'buttons');
+clearScores.setAttribute('id', 'clear');
 clearScores.setAttribute('value', taskIdCounter);
 clearScores.textContent= 'Clear High Scores';
 taskIdCounter++;
 
-btnWrapper.appendChild(playAgain);
-btnWrapper.appendChild(clearScores);
+btnContainer.appendChild(playAgain);
+btnContainer.appendChild(clearScores);
+var btnClick =function(event){
+    if(event.target.id === 'play'){
+      window.location.reload()  
+    }
+    else if(event.target.id ==='clear'){
+        localStorage.clear(userNameArray);
+        quizAnswerContainer.remove();
+    }
+}  
+btnWrapper.addEventListener('click',btnClick)
 }
+
+//document.getElementById('play').addEventListener('click',)
+//document.getElementById('clear').addEventListener('click')
+
+
 
 function countdown() {
 // Use the `setInterval()` method to call a function to be executed every 1000 milliseconds

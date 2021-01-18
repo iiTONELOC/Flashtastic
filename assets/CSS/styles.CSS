@@ -15,6 +15,9 @@ html * {
 #header h1 {
     margin:20px;
 }
+#header h1:hover{
+    color: blueviolet;
+}
 #header div{
     margin: 20px;
 }
@@ -75,9 +78,11 @@ section#buttons {
     display:flex;
     flex-wrap: wrap;
     justify-content: center;
+    align-items: flex-end;
+    margin:auto;
+    height:500px;
 }
-
-button#buttons{
+#buttons button{
     font-size: 18px;
     background-color: blueviolet;
     color: whitesmoke;
@@ -87,8 +92,19 @@ button#buttons{
     padding:10px;
 }
 
-button#buttons:hover {
+#buttons button:hover {
     background-color: violet;
 }
+.button {
+    margin-top: 400px;
 
+}
+section#scoreWrapper {
+    display:flex;
+    flex-flow:column;
+    justify-content: space-between;
+    align-items: center;
+    margin:auto;
+    height:500px;
+}
 
