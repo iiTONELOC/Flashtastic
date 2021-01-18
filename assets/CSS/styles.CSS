@@ -80,7 +80,7 @@ section#buttons {
     justify-content: center;
     align-items: flex-end;
     margin:auto;
-    height:500px;
+    height:300px;
 }
 #buttons button{
     font-size: 18px;
@@ -105,6 +105,6 @@ section#scoreWrapper {
     justify-content: space-between;
     align-items: center;
     margin:auto;
-    height:500px;
+    height:300px;
 }
 

@@ -9,7 +9,7 @@ The quiz consists of 5 questions. The game ends when the timer runs out or all q
 ![Screenshot](https://github.com/iiTONELOC/Flashtastic/blob/main/assets/Images/screenshot.gif)
 # License
 ![GitHub](https://img.shields.io/github/license/iiTONELOC/Flashtastic?style=for-the-badge)
-MIT License
+
 
 Copyright (c) [2021] [Anthony Tropeano]
 
