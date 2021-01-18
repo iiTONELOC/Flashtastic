@@ -1,6 +1,6 @@
 # Flashtastic
 ## is a flash card style quiz game.
-The purpose of this project was to build a quiz revolving around dynamic content creation. With the exceptions of the landing page, the  `<section>` space-holders in the HTML, and the CSS styles; the rest of this content was dynamically created using JavaScript.
+The purpose of this project was to build a quiz revolving around dynamic content creation. With the exceptions of the landing page, the  `<section>` space-holders in the HTML, and the CSS styles; the rest of this content was dynamically created using JavaScript.<section>
 ![GitHub top language](https://img.shields.io/github/languages/top/iiTONELOC/Flashtastic?style=for-the-badge)
 # Installation and Usage
 If you would like to quiz yourself please visit:  [Flashtastic](https://iitoneloc.github.io/Flashtastic/).
