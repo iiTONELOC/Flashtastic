@@ -54,10 +54,9 @@ var viewHighScore=function(event){
 var highScores = JSON.parse(localStorage.getItem('userNameArray'))
 console.log((highScores))
 
-if(highScores == 'null'){return;
+while(highScores !== null){
 
-}
-else{
+
     for (let i = 0; i< highScores.length; i++ ){  
 
     var li = document.createElement('li');
