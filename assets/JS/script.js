@@ -43,7 +43,7 @@ var scoreWrapper=document.querySelector('#scoreWrapper')
 
 var viewHighScore=function(event){
     //clear content
-    clearInterval(timeInterval);
+    timer.remove();
     quizWrapper.remove();
     btnWrapper.remove();
     timer.textContent='';
