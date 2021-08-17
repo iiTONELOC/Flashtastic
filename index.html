@@ -1,46 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="author" content="Anthony Tropeano">
-    <meta name ="description" content="JavaScript quiz game">
+    <meta name="description" content="JavaScript quiz game">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./assets/CSS/styles.CSS">
     <link rel="shortcut icon" href="./assets/Images/icon.png" type="image/x-icon">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <title>Flashtastic</title>
 </head>
+
 <body>
     <header id=header>
         <div>
-        <h1 id=view-scores>View High Scores</h1>
+            <h1 id=view-scores>View High Scores</h1>
         </div>
         <div>
-        <h1>Timer: <span id='timer'>90</span></h1>
+            <h1>Timer: <span id='timer'>90</span></h1>
         </div>
     </header>
-    <section class="quiz-body" id="quiz-wrapper">
-        <div id="question">
-            <div id='h1'>
-            <h1 class="h1" id="h1">Coding Quiz Challenge</h1>
-            <h2 class="h2" id ="h1"> Try to answer all the questions within the time limit. Keep in mind incorrect answers penalize you by 15 seconds. </h2>
-            </div>
-        </div>
-        <div id="quiz-answers">
-            
+    <main>
+        <div id='intro'>
+            <h1 class="h1">Coding Quiz Challenge</h1>
+            <p class="h2"> Try to answer all the questions within the time limit. Keep in mind incorrect
+                answers penalize you by 15 seconds. </p>
             <button id=start-quiz>Start Quiz!</button>
         </div>
-    </section>
-    <section id="incorrect">
+        <section class="quiz-body" id="quiz-wrapper">
+            <div id="question"></div>
+            <div id="quiz-answers"></div>
+            <div id="response"></div>
+        </section>
+        <section id="scoreWrapper">
+            <div id="scoreContainer"></div>
+        </section>
+    </main>
+    <section id='highScoreContainer'></section>
 
-    </section>
-    <section id="buttons" class="button">
-        <div id= "btn-container">
-
-        </div>
-    </section>
-    <section id="scoreWrapper">
-        
-    </section>
 </body>
-<script src="./assets/JS/script.js"></script>
+<script src="./assets/JS/index.js"></script>
+
 </html>
