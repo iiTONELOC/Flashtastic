@@ -5,8 +5,12 @@ The purpose of this project was to build a quiz revolving around dynamic content
 # Installation and Usage
 If you would like to quiz yourself please visit:  [Flashtastic](https://iitoneloc.github.io/Flashtastic/).
 ## Usage Instructions
-The quiz consists of 5 questions. The game ends when the timer runs out or all questions have been answered. Incorrect answers penalize you by a 15 second reduction from the running timer. Click on 'Start Quiz' to begin. When the quiz ends you may save your score. 
-![Screenshot](https://github.com/iiTONELOC/Flashtastic/blob/main/assets/Images/screenshot.gif)
+The quiz consists of 5 questions. The game ends when the timer runs out or all questions have been answered. Incorrect answers penalize you by a 15 second reduction from the running timer. Click on 'Start Quiz' to begin. When the quiz ends you may save your score.
+
+# Screenshot  
+
+![Screenshot](https://github.com/iiTONELOC/Flashtastic/blob/main/assets/Images/screenshot.gif)  
+
 # License
 ![GitHub](https://img.shields.io/github/license/iiTONELOC/Flashtastic?style=for-the-badge)
 
